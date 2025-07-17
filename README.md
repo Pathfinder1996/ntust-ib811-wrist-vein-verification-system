@@ -12,4 +12,4 @@
 - 靜脈特徵匹配之輕量化深度學習模型實現(請先在個人電腦上建模): [請點此連結到訓練靜脈特徵匹配模型](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)
 
 ## 🔧 系統辨識流程圖
-![辨識系統流程](image1.svg)
+![辨識系統流程](image/1.svg)
