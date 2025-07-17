@@ -5,7 +5,7 @@
 
 手腕影像拍攝裝置、系統辨識流程與每次辨識平均耗時(粗略計算)在我的論文第 58-66 頁。[請點此到我的論文連結並到電子全文下載論文](https://etheses.lib.ntust.edu.tw/thesis/detail/2b733280676d7c87e0445313c40a9b74/?seq=2#)
 
-## 📊 個人電腦上測試
+## 📊 個人電腦上開發
 以下為辨識系統各階段程式碼，先在個人電腦上開發並測試，後續整合至樹梅派運行。
 
 - 手腕感興趣區域(ROI)提取: [請點此連結到ROI演算法流程](https://github.com/Pathfinder1996/wrist-roi-extraction)
