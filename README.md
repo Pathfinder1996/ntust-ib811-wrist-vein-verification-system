@@ -8,6 +8,10 @@
 ### 📁 壓縮檔內容
 - `ntust_ib811_wrist_vein_database` - 本研究裝置所收集之 NTUST-IB811 手腕靜脈資料庫，共 2400 張左右手腕靜脈影像。
 - `ntust_ib811_database_introduction.pdf` - NTUST-IB811 手腕靜脈資料庫影像命名方式簡介。
+- `main.py` - NTUST-IB811 手腕靜脈辨識系統 GUI。
+- `vein_enhance.py` - 靜脈特徵增強時用到的自定義函式。
+- `wrist_roi.py` - 手腕感興趣區域提取時用到的自定義函式。
+- `requirements.txt` - Python3.9.2 用到的函式庫及其版本。
 
 ## 🔗 個人電腦上開發
 以下為辨識系統各階段程式碼，先在個人電腦上開發並測試，後續整合至樹梅派運行。
@@ -23,4 +27,40 @@
 4. 載入訓練好的模型進行靜脈特徵匹配(此階段會先問訪問者是要註冊還是訪問本系統，若選擇訪問會提取其靜脈特徵，並詢問訪問者是誰，接著載入其宣稱之用戶靜脈特徵影像進行匹配，判斷訪問者是否有權訪問本系統)
 
 - 系統辨識流程圖如下圖:
+
 ![系統辨識流程](image/1.svg)
+
+## 📊 實驗運行畫面 (點擊縮圖可放大)
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <th>描述</th>
+    <th>K = 1</th>
+    <th>K = 2</th>
+    <th>K = 3</th>
+    <th>K = 4</th>
+    <th>K = 5</th>
+  </tr>
+  <tr>
+    <td>K 折交叉驗證之每折訓練與驗證損失函數曲線圖</td>
+    <td><img src="results/Ours/Ours_loss_fold_1.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_2.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_3.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_4.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_5.svg" width="300"/></td>
+  </tr>
+</table>
+
+## 🔧 本研究樹莓派 OS 版本
+```
+Debian 12 Bookworm
+```
+
+## 🚀 如何使用
+請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本:
+```
+pip install -r requirements.txt
+```
+將 `main.py` 內的所有資料存放路徑替換為您指定的之後，輸入以下指令執行程式運行 NTUST-IB811 手腕靜脈辨識系統 GUI:
+```
+python main.py
+```
