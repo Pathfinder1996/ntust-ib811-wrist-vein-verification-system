@@ -27,10 +27,33 @@
 4. 載入訓練好的模型進行靜脈特徵匹配(此階段會先問訪問者是要註冊還是訪問本系統，若選擇訪問會提取其靜脈特徵，並詢問訪問者是誰，接著載入其宣稱之用戶靜脈特徵影像進行匹配，判斷訪問者是否有權訪問本系統)
 
 - 系統辨識流程圖如下圖:
+
 ![系統辨識流程](image/1.svg)
 
+## 📊 實驗運行畫面 (點擊縮圖可放大)
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <th>描述</th>
+    <th>K = 1</th>
+    <th>K = 2</th>
+    <th>K = 3</th>
+    <th>K = 4</th>
+    <th>K = 5</th>
+  </tr>
+  <tr>
+    <td>K 折交叉驗證之每折訓練與驗證損失函數曲線圖</td>
+    <td><img src="results/Ours/Ours_loss_fold_1.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_2.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_3.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_4.svg" width="300"/></td>
+    <td><img src="results/Ours/Ours_loss_fold_5.svg" width="300"/></td>
+  </tr>
+</table>
+
 ## 🔧 本研究樹莓派 OS 版本
+```
 Debian 12 Bookworm
+```
 
 ## 🚀 如何使用
 請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本:
