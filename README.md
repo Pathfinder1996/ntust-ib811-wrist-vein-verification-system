@@ -60,7 +60,7 @@ Debian 12 Bookworm
 ```
 pip install -r requirements.txt
 ```
-輸入以下指令執行程式運行 NTUST-IB811 手腕靜脈辨識系統 GUI:
+將 `main.py` 內的所有資料存放路徑替換為您指定的之後，輸入以下指令執行程式運行 NTUST-IB811 手腕靜脈辨識系統 GUI:
 ```
 python main.py
 ```
