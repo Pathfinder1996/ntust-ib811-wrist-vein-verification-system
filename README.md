@@ -8,6 +8,10 @@
 ### 📁 壓縮檔內容
 - `ntust_ib811_wrist_vein_database` - 本研究裝置所收集之 NTUST-IB811 手腕靜脈資料庫，共 2400 張左右手腕靜脈影像。
 - `ntust_ib811_database_introduction.pdf` - NTUST-IB811 手腕靜脈資料庫影像命名方式簡介。
+- `main.py` - NTUST-IB811 手腕靜脈辨識系統 GUI。
+- `vein_enhance.py` - 靜脈特徵增強時用到的自定義函式。
+- `wrist_roi.py` - 手腕感興趣區域提取時用到的自定義函式。
+- `requirements.txt` - Python3.9.2 用到的函式庫及其版本。
 
 ## 🔗 個人電腦上開發
 以下為辨識系統各階段程式碼，先在個人電腦上開發並測試，後續整合至樹梅派運行。
@@ -24,3 +28,16 @@
 
 - 系統辨識流程圖如下圖:
 ![系統辨識流程](image/1.svg)
+
+## 🔧 本研究樹莓派 OS 版本
+Debian 12 Bookworm
+
+## 🚀 如何使用
+請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本:
+```
+pip install -r requirements.txt
+```
+輸入以下指令執行程式運行 NTUST-IB811 手腕靜脈辨識系統 GUI:
+```
+python main.py
+```
