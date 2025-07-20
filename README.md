@@ -72,7 +72,7 @@ Debian 12 Bookworm
 ```
 
 ## 🚀 如何使用
-請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本:
+請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本(有的沒辦法直接 pip 安裝，請自行去官網載 `requirements.txt` 內指定版本壓縮檔安裝):
 ```
 pip install -r requirements.txt
 ```
