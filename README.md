@@ -7,7 +7,7 @@
 
 ### 📁 壓縮檔內容
 - `ntust_ib811_wrist_vein_database` - 本研究所收集之 NTUST-IB811 手腕靜脈資料庫，共 2400 張手腕靜脈影像。
-- `ntust_ib811_database_introduction` - NTUST-IB811 手腕靜脈資料庫影像命名方式簡介。
+- `ntust_ib811_database_introduction.pdf` - NTUST-IB811 手腕靜脈資料庫影像命名方式簡介。
 
 ## 🔗 個人電腦上開發
 以下為辨識系統各階段程式碼，先在個人電腦上開發並測試，後續整合至樹梅派運行。
