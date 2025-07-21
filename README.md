@@ -9,8 +9,8 @@
 - `ntust_ib811_wrist_vein_database` - 本研究裝置所收集之 NTUST-IB811 手腕靜脈資料庫，共 2400 張左右手腕靜脈影像。
 - `ntust_ib811_database_introduction.pdf` - NTUST-IB811 手腕靜脈資料庫影像命名方式簡介。
 - `main.py` - NTUST-IB811 手腕靜脈辨識系統 GUI。
-- `vein_enhance.py` - 靜脈特徵增強時用到的自定義函式。
-- `wrist_roi.py` - 手腕感興趣區域提取時用到的自定義函式。
+- `vein_enhance.py` - 靜脈特徵增強時用到的函式。
+- `wrist_roi.py` - 手腕感興趣區域提取時用到的函式。
 - `requirements.txt` - Python3.9.2 用到的函式庫及其版本。
 - `Ours_model_fold_3.tflite` - 本研究最佳模型(特徵匹配階段載入用)。
 
@@ -41,7 +41,7 @@
     <th>用戶資料輸入</th>
   </tr>
   <tr>
-    <td>實際運行結果</td>
+    <td>實際運行畫面</td>
     <td><img src="image/1.png" width="300"/></td>
     <td><img src="image/2.png" width="300"/></td>
     <td><img src="image/3.png" width="300"/></td>
@@ -72,7 +72,7 @@ Debian 12 Bookworm
 ```
 
 ## 🚀 如何使用
-請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本:
+請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本(有的沒辦法直接 pip 安裝，請自行去官網載 `requirements.txt` 內指定版本壓縮檔安裝):
 ```
 pip install -r requirements.txt
 ```
