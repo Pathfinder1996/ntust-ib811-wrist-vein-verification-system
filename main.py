@@ -18,46 +18,46 @@ from wrist_roi import line_intersection, scale_point
 from vein_enhance import automatic_gamma_correction
 
 app = QApplication(sys.argv)
-MainWindow = QMainWindow()
-MainWindow.setObjectName("MainWindow")
-MainWindow.setWindowTitle("NTUST-IB811 靜脈識別系統")
-MainWindow.resize(1200, 680)
+main_window = QMainWindow()
+main_window.setObjectName("MainWindow")
+main_window.setWindowTitle("NTUST-IB811 靜脈識別系統")
+main_window.resize(1200, 680)
 
-label = QLabel(MainWindow)
+label = QLabel(main_window)
 label.setGeometry(20, 20, 642, 480)
 
-roiLabel = QLabel(MainWindow)
-roiLabel.setGeometry(682, 20, 256, 256)
+roi_label = QLabel(main_window)
+roi_label.setGeometry(682, 20, 256, 256)
 
-predictionLabel = QLabel(MainWindow)
-predictionLabel.setGeometry(682, 296, 256, 256)
+prediction_label = QLabel(main_window)
+prediction_label.setGeometry(682, 296, 256, 256)
 
-captureButton = QPushButton('拍攝手腕', MainWindow)
-captureButton.setGeometry(958, 20, 180, 70)
+capture_button = QPushButton('拍攝手腕', main_window)
+capture_button.setGeometry(958, 20, 180, 70)
 
-recaptureButton = QPushButton('重新拍攝', MainWindow)
-recaptureButton.setGeometry(958, 130, 180, 70)
+recapture_button = QPushButton('重新拍攝', main_window)
+recapture_button.setGeometry(958, 130, 180, 70)
 
-segButton = QPushButton('特徵提取', MainWindow)
-segButton.setGeometry(958, 240, 180, 70)
+seg_button = QPushButton('特徵提取', main_window)
+seg_button.setGeometry(958, 240, 180, 70)
 
-matchButton = QPushButton('特徵匹配', MainWindow)
-matchButton.setGeometry(958, 350, 180, 70)
+match_button = QPushButton('特徵匹配', main_window)
+match_button.setGeometry(958, 350, 180, 70)
 
-signinButton = QPushButton('用戶註冊', MainWindow)
-signinButton.setGeometry(958, 460, 180, 70)
+sign_in_button = QPushButton('用戶註冊', main_window)
+sign_in_button.setGeometry(958, 460, 180, 70)
 
-datasetButton = QPushButton('資料庫收集', MainWindow)
-datasetButton.setGeometry(958, 570, 180, 70)
+dataset_button = QPushButton('資料庫收集', main_window)
+dataset_button.setGeometry(958, 570, 180, 70)
 
 ocv = True
 
-def closeEvent(event):
+def close_event(event):
     global ocv
     ocv = False
     cap.release()
 
-MainWindow.closeEvent = closeEvent
+main_window.closeEvent = close_event
 
 cap = cv2.VideoCapture(0)
 
@@ -81,7 +81,7 @@ def opencv():
 video = threading.Thread(target=opencv)
 video.start()
 
-def captureImage():
+def capture_image():
     global cap, ocv
     if not cap.isOpened():
         print("無法開啟相機")
@@ -107,9 +107,9 @@ def captureImage():
     total_cap_time = cap_end_time - cap_start_time
     print(f"[Time] Capture time: {total_cap_time:.6f} s")
 
-captureButton.clicked.connect(captureImage)
+capture_button.clicked.connect(capture_image)
 
-def restartCamera():
+def restart_camera():
     global cap, ocv
     if not ocv:
         cap.release()
@@ -117,9 +117,9 @@ def restartCamera():
         ocv = True
         threading.Thread(target=opencv).start()
 
-recaptureButton.clicked.connect(restartCamera)
+recapture_button.clicked.connect(restart_camera)
 
-def processImage():
+def process_image():
     roi_start_time = time.perf_counter()
 
     captured_img = cv2.imread('captured_img.png', 0)
@@ -324,8 +324,8 @@ def processImage():
     label.setPixmap(QPixmap.fromImage(qimg2))
 
     
-def segmentVeins():
-    processImage()
+def segment_veins():
+    process_image()
 
     # Read the original image
     img = cv2.imread("Original.png", cv2.IMREAD_GRAYSCALE)
@@ -337,15 +337,15 @@ def segmentVeins():
 
     # Convert grayscale image to QImage and display
     qimg = QImage(img.data, width, height, width, QImage.Format_Grayscale8)
-    roiLabel.setPixmap(QPixmap.fromImage(qimg))
+    roi_label.setPixmap(QPixmap.fromImage(qimg))
 
     # Convert binary image to QImage and display
     qimg_prediction = QImage(prediction.data, width, height, width, QImage.Format_Grayscale8)
-    predictionLabel.setPixmap(QPixmap.fromImage(qimg_prediction))
+    prediction_label.setPixmap(QPixmap.fromImage(qimg_prediction))
 
-segButton.clicked.connect(segmentVeins)
+seg_button.clicked.connect(segment_veins)
 
-def matchVeins():
+def match_veins():
     interpreter = tflite.Interpreter(model_path=r"/home/pi/test/Ours_model_fold_3.tflite")
     interpreter.allocate_tensors()
     input_details = interpreter.get_input_details()
@@ -368,7 +368,7 @@ def matchVeins():
     folder1 = r"/home/pi/test"
     folder2 = r"/home/pi/test/sign_dataset/"
 
-    user_id_input, okPressed = QInputDialog.getText(MainWindow, "用戶登錄", "請輸入用戶名稱:", QtWidgets.QLineEdit.Normal, "")
+    user_id_input, okPressed = QInputDialog.getText(main_window, "用戶登錄", "請輸入用戶名稱:", QtWidgets.QLineEdit.Normal, "")
     if okPressed and user_id_input != '':
         # print("User ID Input:", user_id_input)
         prediction_image_path = os.path.join(folder1, "Prediction_img.png")
@@ -438,37 +438,37 @@ def matchVeins():
         msg.setText(f"用戶: {user_id_input} 不存在")
     msg.exec_()
 
-matchButton.clicked.connect(matchVeins)
+match_button.clicked.connect(match_veins)
 
-def signinImage():
+def sign_in_image():
     save_to_sign_path = r"/home/pi/test/sign_dataset"
 
-    image_name, ok = QInputDialog.getText(MainWindow, '用戶註冊', '請輸入註冊名稱:')
+    image_name, ok = QInputDialog.getText(main_window, '用戶註冊', '請輸入註冊名稱:')
     if ok and image_name:
         full_save_path = os.path.join(save_to_sign_path, f'{image_name}.png')
         
         if os.path.exists(full_save_path):
-            QMessageBox.warning(MainWindow, '警告', '用戶已存在，請重新輸入註冊名稱')
-            signinImage()
+            QMessageBox.warning(main_window, '警告', '用戶已存在，請重新輸入註冊名稱')
+            sign_in_image()
             return
-        
-        reply = QMessageBox.question(MainWindow, '注意', f'確認註冊為 {image_name} 嗎？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        reply = QMessageBox.question(main_window, '注意', f'確認註冊為 {image_name} 嗎？', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
             signin_path = "Prediction_img.png"
             signin_image = cv2.imread(signin_path)
-            if signin_image is not None:
-                cv2.imwrite(full_save_path, signin_image)
-                QMessageBox.information(MainWindow, '圖像保存', f'圖像已保存到資料庫')
+            if sign_in_image is not None:
+                cv2.imwrite(full_save_path, sign_in_image)
+                QMessageBox.information(main_window, '圖像保存', f'圖像已保存到資料庫')
             else:
-                QMessageBox.warning(MainWindow, '錯誤', '讀取圖像失敗，請重新拍攝')
+                QMessageBox.warning(main_window, '錯誤', '讀取圖像失敗，請重新拍攝')
         else:
             return
     else:
-        QMessageBox.warning(MainWindow, '錯誤', '請輸入有效的用戶名稱')
+        QMessageBox.warning(main_window, '錯誤', '請輸入有效的用戶名稱')
 
-signinButton.clicked.connect(signinImage)
+sign_in_button.clicked.connect(sign_in_image)
 
-def saveDataset():
+def save_dataset():
     global cap
     if not cap.isOpened():
         print("無法開啟相機")
@@ -497,8 +497,8 @@ def saveDataset():
         save_path = os.path.join(folder_path, file_name)
 
         if os.path.exists(save_path):
-            QMessageBox.warning(MainWindow, '警告', '此編號已存在，請重新輸入編號')
-            saveDataset()
+            QMessageBox.warning(main_window, '警告', '此編號已存在，請重新輸入編號')
+            save_dataset()
             return
         
         cv2.imwrite(save_path, frame_cropped)
@@ -507,7 +507,7 @@ def saveDataset():
 
     print("收集完畢")
 
-datasetButton.clicked.connect(saveDataset)
+dataset_button.clicked.connect(save_dataset)
 
-MainWindow.show()
+main_window.show()
 sys.exit(app.exec_())
