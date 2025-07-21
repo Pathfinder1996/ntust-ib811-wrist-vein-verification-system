@@ -41,7 +41,7 @@
     <th>用戶資料輸入</th>
   </tr>
   <tr>
-    <td>實際運行結果</td>
+    <td>實際運行畫面</td>
     <td><img src="image/1.png" width="300"/></td>
     <td><img src="image/2.png" width="300"/></td>
     <td><img src="image/3.png" width="300"/></td>
