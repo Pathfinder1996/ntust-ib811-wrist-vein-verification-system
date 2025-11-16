@@ -11,7 +11,7 @@ This system integrates wrist image acquisition, region of interest (ROI) extract
 - `main.py` - GUI for the NTUST-IB811 wrist vein verification system.
 - `vein_enhance.py` - Functions for vein enhancement.
 - `wrist_roi.py` - Functions for wrist ROI extraction.
-- `requirements.txt` - Required Python 3.9.2 packages for Raspberry Pi.
+- `requirements.txt` - Python 3.9.2 dependency list used on Raspberry Pi.
 - `Ours_model_fold_3.tflite` - The best-performing model for feature matching.
 
 ## Development on Personal Computer
