@@ -1,45 +1,49 @@
-## 📝 NTUST-IB811 手腕靜脈辨識系統
-此專題為我的碩士論文手腕靜脈辨識系統
+## NTUST-IB811 Wrist Vein Verification System on Raspberry Pi
+This repository provides the open-source implementation of the wrist vein verification system used in our journal publication.
 
-使用 Python 將手腕影像拍攝、手腕感興趣區域(ROI)提取、靜脈特徵增強與靜脈特徵匹配模組整合至樹莓派，並設計一個陽春的圖形用使用者介面(GUI)方便操作觀看整個辨識流程。
+The NTUST-IB811 Wrist Vein Dataset, collected using our NIR imaging device, can be downloaded from:
 
-手腕影像拍攝裝置、系統辨識流程與每次辨識平均耗時在我的論文第 58-66 頁。[請點此到我的論文連結並到電子全文下載論文](https://etheses.lib.ntust.edu.tw/thesis/detail/2b733280676d7c87e0445313c40a9b74/?seq=2#)
+🔗 [https://ieee-dataport.org/documents/ntust-ib811-wrist-vein-dataset](https://ieee-dataport.org/documents/ntust-ib811-wrist-vein-dataset)
 
-### 📁 壓縮檔內容
-- `main.py` - NTUST-IB811 手腕靜脈辨識系統 GUI。
-- `vein_enhance.py` - 靜脈特徵增強時用到的函式。
-- `wrist_roi.py` - 手腕感興趣區域提取時用到的函式。
-- `requirements.txt` - 樹莓派 Python3.9.2 用到的函式庫及其版本。
-- `Ours_model_fold_3.tflite` - 本研究最佳模型(特徵匹配階段載入用)。
+This system integrates wrist image acquisition, region of interest (ROI) extraction, vein enhancement, and deep-learning-based feature matching into a Raspberry Pi environment. A lightweight graphical user interface (GUI) is included for easy operation and demonstration.
 
-## 🔗 個人電腦上開發
-以下為辨識系統各階段程式碼，先在個人電腦上開發並測試，後續整合至樹梅派運行。
-- 手腕感興趣區域(ROI)提取: [請點此連結到ROI演算法流程](https://github.com/Pathfinder1996/wrist-roi-extraction)
-- 靜脈特徵增強: [請點此連結到靜脈特徵增強演算法流程](https://github.com/Pathfinder1996/biometric-vein-enhancement)
-- 靜脈特徵匹配之輕量化深度學習模型實現(請先在個人電腦上建模): [請點此連結到訓練靜脈特徵匹配模型](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)
+### Contents of the .zip
+- `main.py` - GUI for the NTUST-IB811 wrist vein verification system.
+- `vein_enhance.py` - Functions for vein enhancement.
+- `wrist_roi.py` - Functions for wrist ROI extraction.
+- `requirements.txt` - Required Python 3.9.2 packages for Raspberry Pi.
+- `Ours_model_fold_3.tflite` - The best-performing model for feature matching.
 
-## 🔧 系統辨識流程圖
-- 系統辨識流程分為四個階段:
-1. 拍攝手腕靜脈影像
-2. 手腕感興趣區域影像提取
-3. 手腕靜脈特徵增強
-4. 載入訓練好的模型進行靜脈特徵匹配(此階段可讓訪問者決定要註冊還是訪問本系統，若選擇訪問會提取其靜脈特徵，並詢問訪問者是誰，接著到資料庫載入其宣稱之用戶靜脈特徵影像進行匹配，判斷訪問者是否有權訪問本系統)
+## Development on Personal Computer
+The system modules were first developed and validated on a PC before deployment to the Raspberry Pi.
+- ROI Extraction:: [https://github.com/Pathfinder1996/wrist-roi-extraction](https://github.com/Pathfinder1996/wrist-roi-extraction)
+- Vein Enhancement:: [https://github.com/Pathfinder1996/biometric-vein-enhancement](https://github.com/Pathfinder1996/biometric-vein-enhancement)
+- Lightweight Siamese Network Feature Matching Model (Training on PC):: [https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)
 
-- 系統辨識流程圖如下圖:
+## System Workflow
+- The verification pipeline consists of four stages:
+1. Capture the wrist vein image
+2. Extract the ROI
+3. Enhance the vein image
+4. Load the trained model for feature matching
+   - Users may register or authenticate
+   - For authentication, the system extracts the user’s vein features and compares them with the claimed identity stored in the database
 
-![系統辨識流程](image/1.svg)
+- System Flowchart:
 
-## 🔧 本研究樹莓派 OS 版本
+![System Flowchart](image/1.png)
+
+## Raspberry Pi OS Version
 ```
 Debian 12 Bookworm
 ```
 
-## 🚀 如何使用
-請輸入以下指令建置 Python3.9.2 環境用到的函式庫及其版本(有的沒辦法直接 pip 安裝，請自行去官網載 `requirements.txt` 內指定版本壓縮檔安裝):
+## How to Use
+Install the required Python 3.9.2 packages:
 ```
 pip install -r requirements.txt
 ```
-將 `main.py` 內的所有資料存放路徑替換為您指定的之後，輸入以下指令執行程式運行 NTUST-IB811 手腕靜脈辨識系統 GUI:
+Update all file paths inside `main.py` according to your system, then run the GUI:
 ```
 python main.py
 ```
