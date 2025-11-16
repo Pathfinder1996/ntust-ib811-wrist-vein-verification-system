@@ -6,12 +6,10 @@
 手腕影像拍攝裝置、系統辨識流程與每次辨識平均耗時在我的論文第 58-66 頁。[請點此到我的論文連結並到電子全文下載論文](https://etheses.lib.ntust.edu.tw/thesis/detail/2b733280676d7c87e0445313c40a9b74/?seq=2#)
 
 ### 📁 壓縮檔內容
-- `ntust_ib811_wrist_vein_database` - 本研究裝置所收集之 NTUST-IB811 手腕靜脈資料庫，共 2400 張左右手腕靜脈影像。
-- `ntust_ib811_database_introduction.pdf` - NTUST-IB811 手腕靜脈資料庫影像命名方式簡介。
 - `main.py` - NTUST-IB811 手腕靜脈辨識系統 GUI。
 - `vein_enhance.py` - 靜脈特徵增強時用到的函式。
 - `wrist_roi.py` - 手腕感興趣區域提取時用到的函式。
-- `requirements.txt` - Python3.9.2 用到的函式庫及其版本。
+- `requirements.txt` - 樹莓派 Python3.9.2 用到的函式庫及其版本。
 - `Ours_model_fold_3.tflite` - 本研究最佳模型(特徵匹配階段載入用)。
 
 ## 🔗 個人電腦上開發
