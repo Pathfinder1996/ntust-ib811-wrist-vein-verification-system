@@ -7,7 +7,7 @@ The NTUST-IB811 Wrist Vein Dataset, collected using our NIR imaging device, can 
 
 This system integrates wrist image acquisition, region of interest (ROI) extraction, vein enhancement, and deep-learning-based feature matching into a Raspberry Pi environment. A lightweight graphical user interface (GUI) is included for easy operation and demonstration.
 
-### Contents of the .zip
+## Contents
 - `main.py` - GUI for the NTUST-IB811 wrist vein verification system.
 - `vein_enhance.py` - Functions for vein enhancement.
 - `wrist_roi.py` - Functions for wrist ROI extraction.
@@ -43,6 +43,9 @@ Install the required Python 3.9.2 packages:
 ```
 pip install -r requirements.txt
 ```
+Note: Some packages listed in requirements.txt cannot be installed directly via pip on Raspberry Pi.
+For these modules, you must manually download the specified version (source archive or wheel file) from the official website or GitHub release page and install them locally.
+
 Update all file paths inside `main.py` according to your system, then run the GUI:
 ```
 python main.py
