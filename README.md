@@ -31,41 +31,6 @@
 
 ![系統辨識流程](image/1.svg)
 
-## 📊 樹莓派實際運行畫面 (點擊縮圖可放大)
-<table border="1" cellspacing="0" cellpadding="6">
-  <tr>
-    <th>描述</th>
-    <th>拍攝左手腕靜脈影像(拍攝手腕按鈕)</th>
-    <th>提取感興趣區域與靜脈特徵增強(特徵提取按鈕)</th>
-    <th>用戶註冊(用戶註冊按鈕)</th>
-    <th>用戶資料輸入</th>
-  </tr>
-  <tr>
-    <td>實際運行畫面</td>
-    <td><img src="image/1.png" width="300"/></td>
-    <td><img src="image/2.png" width="300"/></td>
-    <td><img src="image/3.png" width="300"/></td>
-    <td><img src="image/4.png" width="300"/></td>
-  </tr>
-</table>
-
-<table border="1" cellspacing="0" cellpadding="6">
-  <tr>
-    <th>描述</th>
-    <th>影像保存到資料庫</th>
-    <th>再次拍攝左手腕靜脈影像</th>
-    <th>訪問系統(特徵匹配按鈕)</th>
-    <th>判斷為系統用戶，允許訪問</th>
-  </tr>
-  <tr>
-    <td>實際訪問測試</td>
-    <td><img src="image/5.png" width="300"/></td>
-    <td><img src="image/6.png" width="300"/></td>
-    <td><img src="image/7.png" width="300"/></td>
-    <td><img src="image/8.png" width="300"/></td>
-  </tr>
-</table>
-
 ## 🔧 本研究樹莓派 OS 版本
 ```
 Debian 12 Bookworm
