@@ -31,7 +31,7 @@ The system modules were first developed and validated on a PC before deployment 
 
 - System Flowchart:
 
-![System Flowchart](image/1.png)
+![System Flowchart](image/fig1.png)
 
 ## Raspberry Pi OS Version
 ```
