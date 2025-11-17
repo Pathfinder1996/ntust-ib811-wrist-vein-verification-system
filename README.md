@@ -38,6 +38,8 @@ The system modules were first developed and validated on a PC before deployment 
 |-------------|-----------------|-----------------|-----------------|
 | ![1](image/1.png) | ![2](image/2.png) |![3](image/3.png) |![4](image/4.png) |
 
+This demo showcases the full workflow of our wrist vein verification system on Raspberry Pi.
+
 ## Raspberry Pi OS Version
 ```
 Debian 12 Bookworm
