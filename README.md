@@ -33,6 +33,11 @@ The system modules were first developed and validated on a PC before deployment 
 
 ![System Flowchart](image/fig1.png)
 
+## Example Results (Click the thumbnails to enlarge)
+| Capture Wrist | Feature Extraction (ROI + Vein Enhancement) | User Registration | Feature Matching (Intentionally tested with different wrist → Rejected) |
+|-------------|-----------------|-----------------|-----------------|
+| ![1](image/1.png) | ![2](image/2.png) |![3](image/3.png) |![4](image/4.png) |
+
 ## Raspberry Pi OS Version
 ```
 Debian 12 Bookworm
