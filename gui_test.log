@@ -1,0 +1,79 @@
+Script started on 2025-11-18 20:29:27+08:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="88" LINES="60"]
+[?2004h]0;pi@raspberrypi: ~/final[01;32mpi@raspberrypi[00m:[01;34m~/final $[00m python main.py 
+[?2004l[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Info] Camera restarted
+[Error] Failed to capture image
+[Time] Capture time: 0.034326 s
+[Time] ROI extraction time: 0.077452 s
+[Time] Vein enhancement time: 0.020816 s
+[Time] Matching time: 0.228613 s
+[Info] Camera restarted
+[Time] Capture time: 0.041780 s
+[Time] ROI extraction time: 0.067103 s
+[Time] Vein enhancement time: 0.007466 s
+[Time] Matching time: 0.255942 s
+[Info] Camera restarted
+[Time] Capture time: 0.037230 s
+[Time] ROI extraction time: 0.071960 s
+[Time] Vein enhancement time: 0.010957 s
+[Time] Matching time: 0.233897 s
+[Info] Camera restarted
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Time] Capture time: 0.035657 s
+[Time] ROI extraction time: 0.076415 s
+[Time] Vein enhancement time: 0.007531 s
+[Time] Matching time: 0.254738 s
+[Info] Camera restarted
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Time] Capture time: 0.035607 s
+[Time] ROI extraction time: 0.062562 s
+[Time] Vein enhancement time: 0.007297 s
+[Time] Matching time: 0.240099 s
+[Info] Camera restarted
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Time] Capture time: 0.032987 s
+[Time] ROI extraction time: 0.064431 s
+[Time] Vein enhancement time: 0.007378 s
+[Time] Matching time: 0.241531 s
+[Info] Camera restarted
+[Time] Capture time: 0.055974 s
+[Time] ROI extraction time: 0.068480 s
+[Time] Vein enhancement time: 0.007341 s
+[Time] Matching time: 0.239486 s
+[Info] Camera restarted
+[Time] Capture time: 0.037309 s
+[Time] ROI extraction time: 0.071538 s
+[Time] Vein enhancement time: 0.007366 s
+[Time] Matching time: 0.232762 s
+[Info] Camera restarted
+[Time] Capture time: 0.035034 s
+[Time] ROI extraction time: 0.052903 s
+[Time] Vein enhancement time: 0.007902 s
+[Time] Matching time: 0.245655 s
+[Info] Camera restarted
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Error] Failed to capture image
+[Time] Capture time: 0.033496 s
+[Time] ROI extraction time: 0.065350 s
+[Time] Vein enhancement time: 0.008154 s
+[Time] Matching time: 0.254530 s
+[Info] Camera restarted
+[Time] Capture time: 0.031515 s
+[Time] ROI extraction time: 0.055524 s
+[Time] Vein enhancement time: 0.011947 s
+[Time] Matching time: 0.255909 s
+[?2004h]0;pi@raspberrypi: ~/final[01;32mpi@raspberrypi[00m:[01;34m~/final $[00m exit
+[?2004lexit
+
+Script done on 2025-11-18 20:34:37+08:00 [COMMAND_EXIT_CODE="0"]
