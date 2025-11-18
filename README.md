@@ -8,6 +8,7 @@ The NTUST-IB811 Wrist Vein Dataset, collected using our NIR imaging device, can 
 This system integrates wrist image acquisition, region of interest (ROI) extraction, vein enhancement, and deep-learning-based feature matching into a Raspberry Pi environment. A lightweight graphical user interface (GUI) is included for easy operation and demonstration.
 
 ## Contents
+- `gui_test.log` - Console output log showing the execution timeline, camera restart behavior, capture errors, and processing latency for each system stage.
 - `main.py` - GUI for the NTUST-IB811 wrist vein verification system.
 - `vein_enhance.py` - Functions for vein enhancement.
 - `wrist_roi.py` - Functions for wrist ROI extraction.
