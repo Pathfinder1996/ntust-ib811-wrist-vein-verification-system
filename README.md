@@ -1,4 +1,4 @@
-## 2025/11/30
+## 2025/11/30 更新
 如果您是透過我的碩士論文連結前來，請注意本系統的程式碼與實驗結果已進行以下更新：
 
 - 第 3.2 章節之靜脈特徵增強流程的參數全面修正：
@@ -8,7 +8,7 @@
 現行系統採用新版的特徵匹配模型（詳見下方開發連結），相較於原論文版本，計算量已進一步減少，在不犧牲準確率的前提下提升推論效率。
 
 - 第 5.3.4 章節之樹莓派端延遲大幅下降：
-依據 `gui_test.log` 的最新 profiling 結果，目前系統各階段的平均延遲均顯著低於論文所報告的數值。本次更新移除了多項冗餘計算，並重新規劃資料流程，使整體效能大幅提升。未來版本正以編譯型語言重寫部分模組，進一步降低延遲。
+依據壓縮檔內 `gui_test.log` 的最新結果，目前系統各階段的平均延遲均顯著低於論文所報告的數值。本次更新移除了多項冗餘計算，使整體效能大幅提升。未來版本正以編譯式語言重寫部分模組，進一步降低延遲。
 
 ## NTUST-IB811 Wrist Vein Verification System on Raspberry Pi
 This repository provides the open-source implementation of the wrist vein verification system used in our journal publication.
