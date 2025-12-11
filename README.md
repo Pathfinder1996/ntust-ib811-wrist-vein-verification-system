@@ -3,11 +3,11 @@
 
 - `第 3.2 章節`之靜脈特徵增強流程的參數全面修正：
 
-   原始論文版本在影像增強階段的部分參數設定不正確。經修正後重新訓練模型（[點此連結至增強演算法](https://github.com/Pathfinder1996/biometric-vein-enhancement)），在 FYO 與 PUT 測試集上的 EER 明顯下降。
+   原始論文版本在影像增強階段的部分參數設定不正確。經修正後的演算法使皮膚與靜脈之間的對比度更加明顯，噪值更少，重新訓練模型後（[點此連結至增強演算法](https://github.com/Pathfinder1996/biometric-vein-enhancement)），在 FYO 與 PUT 測試集上之 Equal Error Rate (EER) 比論文還低。
 
 - `第 4.2 章節`之靜脈特徵匹配模型子網路架構更新：
 
-   現行系統採用新版的特徵匹配模型（[點此連結至模型架構](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)），相較於原論文版本，計算量已進一步減少，在不犧牲準確率的前提下提升推論效率。
+   現行系統採用新版的特徵匹配模型（[點此連結至模型架構](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)），相較於原論文版本，模型架構有變，計算量已進一步減少，在不犧牲準確率的前提下提升推論效率。
 
 - `第 5.3.1 章節`之手腕靜脈拍攝裝置：
 
