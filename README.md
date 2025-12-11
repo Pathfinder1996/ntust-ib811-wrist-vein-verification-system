@@ -1,15 +1,24 @@
-## 2025/11/30 更新
+## 2025/12/11 更新
 如果您是透過我的碩士論文連結前來，請注意本系統的程式碼與實驗結果已進行以下更新：
 
-- 第 3.2 章節之靜脈特徵增強流程的參數全面修正：
-原始論文版本在影像增強階段的部分參數設定不正確。經修正後重新訓練模型（詳見下方開發連結），在 FYO 與 PUT 測試集上的 EER 明顯下降。
+- `第 3.2 章節`之靜脈特徵增強流程的參數全面修正：
 
-- 第 4.2 章節之靜脈特徵匹配模型子網路架構更新：
-現行系統採用新版的特徵匹配模型（詳見下方開發連結），相較於原論文版本，計算量已進一步減少，在不犧牲準確率的前提下提升推論效率。
+   原始論文版本在影像增強階段的部分參數設定不正確。經修正後重新訓練模型（[點此連結至增強演算法](https://github.com/Pathfinder1996/biometric-vein-enhancement)），在 FYO 與 PUT 測試集上的 EER 明顯下降。
 
-- 第 5.3.4 章節之樹莓派端延遲大幅下降：
-依據壓縮檔內 `gui_test.log` 的最新結果，目前系統各階段的平均延遲均顯著低於論文所報告的數值。本次更新移除了多項冗餘計算，使整體效能大幅提升。未來版本正以編譯式語言重寫部分模組，進一步降低延遲。
+- `第 4.2 章節`之靜脈特徵匹配模型子網路架構更新：
 
+   現行系統採用新版的特徵匹配模型（[點此連結至模型架構](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)），相較於原論文版本，計算量已進一步減少，在不犧牲準確率的前提下提升推論效率。
+
+- `第 5.3.1 章節`之手腕靜脈拍攝裝置：
+
+   建議改為固定式裝置或在畫面中用引導框的方式拍攝手腕靜脈，就算這樣每個人跨次擺放手腕的位置一定不相同，所以可在套用 Region of Interest (ROI) 演算法，盡量提取差不多位置的 ROI。(我們的 ROI 演算法依賴幾何輪廓與凸缺陷分析，對手腕旋轉、肌肉狀態等外在條件非常敏感。在非接觸式的情況下每次提取到的 ROI 會不同，無法保證跨次拍攝穩定性，所以還需透過固定式等方式加強提取到的 ROI 影像穩健性)
+
+- `第 5.3.4 章節`之樹莓派端延遲大幅下降：
+
+   依據壓縮檔內 `gui_test.log` 的最新結果，目前系統各階段的平均延遲均顯著低於論文所報告的數值。本次更新移除了多項冗餘計算，使整體效能大幅提升。未來版本正以編譯式語言重寫部分模組，進一步降低延遲。
+
+這系統是個垃圾
+  
 ## NTUST-IB811 Wrist Vein Verification System on Raspberry Pi
 This repository provides the open-source implementation of the wrist vein verification system used in our journal publication.
 
@@ -17,7 +26,7 @@ The NTUST-IB811 Wrist Vein Dataset, collected using our NIR imaging device, can 
 
 🔗 [https://ieee-dataport.org/documents/ntust-ib811-wrist-vein-dataset](https://ieee-dataport.org/documents/ntust-ib811-wrist-vein-dataset)
 
-This system integrates wrist image acquisition, region of interest (ROI) extraction, vein enhancement, and deep-learning-based feature matching into a Raspberry Pi environment. A lightweight graphical user interface (GUI) is included for easy operation and demonstration.
+This system integrates wrist image acquisition, ROI extraction, vein enhancement, and deep-learning-based feature matching into a Raspberry Pi environment. A lightweight graphical user interface (GUI) is included for easy operation and demonstration.
 
 ## Contents
 - `gui_test.log` - Console output log showing processing latency for each system stage.
@@ -28,7 +37,7 @@ This system integrates wrist image acquisition, region of interest (ROI) extract
 - `Ours_model_fold_3.tflite` - The best-performing model for feature matching.
 
 ## Development on Personal Computer
-The system modules were first developed and validated on a PC before deployment to the Raspberry Pi.
+The system modules were first developed and validated on a PC
 - ROI Extraction: [https://github.com/Pathfinder1996/wrist-roi-extraction](https://github.com/Pathfinder1996/wrist-roi-extraction)
 - Vein Enhancement: [https://github.com/Pathfinder1996/biometric-vein-enhancement](https://github.com/Pathfinder1996/biometric-vein-enhancement)
 - Lightweight Siamese Network Feature Matching Model (Training on PC): [https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network](https://github.com/Pathfinder1996/lightweight-hybrid-siamese-neural-network)
