@@ -17,7 +17,7 @@
 
    依據壓縮檔內 `gui_test.log` 的最新結果，目前系統各階段的平均延遲均顯著低於論文所報告的數值。本次更新移除了多項冗餘計算，使整體效能大幅提升。未來版本會以編譯式語言重寫部分模組，進一步降低階段延遲。
 
-儘管有上述這些更新，這系統仍是個垃圾，各階段演算法皆無法與最先進的研究比較，頂多讓您了解靜脈驗證的端到端流程。
+儘管有上述這些更新，這系統仍是個垃圾，各階段演算法皆無法與最先進的研究比較，去看別人的 Paper...
   
 ## NTUST-IB811 Wrist Vein Verification System on Raspberry Pi
 This repository provides the open-source implementation of the wrist vein verification system used in our journal publication.
