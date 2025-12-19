@@ -13,7 +13,7 @@
 
 - `第 3.2 章節`之靜脈特徵增強流程的參數修正：
 
-   原始論文版本在影像增強階段的部分參數設定不正確。經修正後的演算法使皮膚與靜脈之間的對比度更加明顯，噪值更少，重新訓練模型後（[點此連結至增強演算法](https://github.com/Pathfinder1996/biometric-vein-enhancement)），在 FYO 與 PUT 測試集上之 Equal Error Rate (EER) 比論文還低。
+   原始論文版本在影像增強階段的部分參數設定不正確。經修正後的演算法使皮膚與靜脈之間的對比度更加明顯，噪值更少，重新訓練模型後（[點此連結至增強演算法](https://github.com/Pathfinder1996/biometric-vein-enhancement)），在 FYO 與 PUT 測試集上之相等錯誤率 (Equal Error Rate, EER) 比論文還低。
 
 - `第 4.2 章節`之靜脈特徵匹配模型子網路架構更新：
 
