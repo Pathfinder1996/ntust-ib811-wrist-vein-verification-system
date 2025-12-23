@@ -54,15 +54,15 @@ The system modules were first developed and validated on a PC
 2. Extract the ROI
 3. Enhance the vein image
 4. Load the trained model for feature matching
-   - Users may register or authenticate
-   - For authentication, the system extracts the user’s vein features and compares them with the claimed identity stored in the database
+   - Users may register or verification
+   - For verification, the system extracts the user’s vein features and compares them with the claimed identity stored in the database
 
 - System Flowchart:
 
 ![System Flowchart](image/fig1.png)
 
 ## Example Results (Click the thumbnails to enlarge)
-| Capture Wrist | Feature Extraction (ROI + Vein Enhancement) | User Registration | Feature Matching (Same wrist used for authentication → Accepted) | Execution Time Overview |
+| Capture Wrist | Feature Extraction (ROI + Vein Enhancement) | User Registration | Feature Matching (Same wrist used for verification → Accepted) | Execution Time Overview |
 |-------------|-----------------|-----------------|-----------------|-----------------|
 | ![1](image/1.png) | ![2](image/2.png) |![3](image/3.png) |![4](image/4.png) |![5](image/5.png) |
 
